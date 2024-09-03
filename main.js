@@ -35,3 +35,24 @@ app.whenReady().then(() => {
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
+
+const { Menu } = require("electron");
+
+// 애플리케이션 메뉴를 정의합니다.
+const template = [
+  {
+    label: "Edit",
+    submenu: [
+      { role: "undo" },
+      { role: "redo" },
+      { type: "separator" },
+      { role: "cut" },
+      { role: "copy" },
+      { role: "paste" },
+    ],
+  },
+];
+
+// 정의한 메뉴 템플릿으로 메뉴 객체를 생성하고, 애플리케이션 메뉴로 설정합니다.
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
