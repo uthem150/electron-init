@@ -1,9 +1,10 @@
 // 메인 스크립트에서 Electron 모듈을 불러옴
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron/main");
+const path = require("node:path"); // 스크립트를 렌더러 프로세스에 연결
 
 // 새로운 브라우저 창을 생성하는 함수를 정의
 function createWindow() {
-  // BrowserWindow 인스턴스를 생성
+  // BrowserWindow를 생성하여 HTML 파일을 렌더링
   let win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -19,6 +20,7 @@ function createWindow() {
 
 // Electron이 초기화를 완료하고 창을 생성할 준비가 되면 createWindow 함수를 호출
 app.whenReady().then(() => {
+  ipcMain.handle("ping", () => "pong"); // IPC 핸들러 설정
   createWindow();
 
   // (macOS에서) 열려 있지 않은 경우 창 열기
