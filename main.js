@@ -2,9 +2,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron/main");
 const path = require("node:path"); // 스크립트를 렌더러 프로세스에 연결
 
-// 자동 업데이트 활성화
-const { updateElectronApp } = require("update-electron-app");
-updateElectronApp();
 
 // 새로운 브라우저 창을 생성하는 함수를 정의
 function createWindow() {
