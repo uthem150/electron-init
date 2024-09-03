@@ -2,6 +2,10 @@
 const { app, BrowserWindow, ipcMain } = require("electron/main");
 const path = require("node:path"); // 스크립트를 렌더러 프로세스에 연결
 
+// 자동 업데이트 활성화
+const { updateElectronApp } = require("update-electron-app");
+updateElectronApp();
+
 // 새로운 브라우저 창을 생성하는 함수를 정의
 function createWindow() {
   // BrowserWindow를 생성하여 HTML 파일을 렌더링
@@ -35,24 +39,3 @@ app.whenReady().then(() => {
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit();
 });
-
-const { Menu } = require("electron");
-
-// 애플리케이션 메뉴를 정의합니다.
-const template = [
-  {
-    label: "Edit",
-    submenu: [
-      { role: "undo" },
-      { role: "redo" },
-      { type: "separator" },
-      { role: "cut" },
-      { role: "copy" },
-      { role: "paste" },
-    ],
-  },
-];
-
-// 정의한 메뉴 템플릿으로 메뉴 객체를 생성하고, 애플리케이션 메뉴로 설정합니다.
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
