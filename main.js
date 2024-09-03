@@ -1,7 +1,8 @@
+require("update-electron-app")();
+
 // 메인 스크립트에서 Electron 모듈을 불러옴
 const { app, BrowserWindow, ipcMain } = require("electron/main");
 const path = require("node:path"); // 스크립트를 렌더러 프로세스에 연결
-
 
 // 새로운 브라우저 창을 생성하는 함수를 정의
 function createWindow() {
