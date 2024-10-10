@@ -1,0 +1,50 @@
+.container {
+  height: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.title {
+  height: auto;
+  padding: 10px;
+  display: inline-block;
+}
+
+.control {
+  float: right;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5px;
+  margin-right: 5px;
+  width: 100px;
+}
+
+.control button {
+  padding: 5px;
+  background: #000000;
+  color: #ffffff;
+  outline: 0;
+  border: 0;
+}
+
+.control button:hover {
+  background: #444444;
+}
+
+.title-bar {
+  background: #000000;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.prevent-select {
+  user-select: none; /* 사용자가 텍스트를 선택할 수 없도록 */
+  -webkit-touch-callout: none; /* 모바일에서 터치 콜아웃을 비활성화 */
+  -webkit-user-select: none; /* 웹킷 기반 브라우저에서 텍스트 선택을 비활성화 */
+}
+
+.draggable {
+  -webkit-app-region: drag; /*드래그할 수 있는 영역으로 설정 - 드래그하여 창을 이동할 수 있게*/
+}
