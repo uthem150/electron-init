@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, Menu } from "electron";
 import path from "path";
 
 function createWindow() {
@@ -12,6 +12,10 @@ function createWindow() {
   });
   win.loadURL("http://localhost:3000");
 }
+
+const template = [];
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
 
 app.whenReady().then(() => {
   createWindow();
