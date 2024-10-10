@@ -19,6 +19,12 @@ const template = [
     submenu: [
       {
         label: "Open",
+        click: function () {
+          console.log("Clicked Menu Open!!!");
+        },
+      },
+      {
+        role: "toggleDevTools",
       },
     ],
   },
