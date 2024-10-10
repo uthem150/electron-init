@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from "electron";
+import { app, BrowserWindow, Menu, shell } from "electron";
 import path from "path";
 
 function createWindow() {
@@ -22,7 +22,7 @@ const template = [
         type: "checkbox",
         checked: true,
         click: function () {
-          console.log("Clicked Menu Open!!!");
+          shell.openExternal("https://www.electronjs.org/docs/api");
         },
       },
       { type: "separator" },
