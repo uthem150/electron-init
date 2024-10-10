@@ -23,6 +23,8 @@ const template = [
           console.log("Clicked Menu Open!!!");
         },
       },
+      { type: "separator" },
+
       {
         role: "toggleDevTools",
       },
