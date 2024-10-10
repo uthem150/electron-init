@@ -19,6 +19,8 @@ const template = [
     submenu: [
       {
         label: "Open",
+        type: "checkbox",
+        checked: true,
         click: function () {
           console.log("Clicked Menu Open!!!");
         },
