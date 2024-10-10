@@ -13,7 +13,16 @@ function createWindow() {
   win.loadURL("http://localhost:3000");
 }
 
-const template = [];
+const template = [
+  {
+    label: "File",
+    submenu: [
+      {
+        label: "Open",
+      },
+    ],
+  },
+];
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);
 
